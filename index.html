@@ -7,29 +7,43 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      background: #000;
-      color: #ff0000;
-      font-family: Arial, sans-serif;
       overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: black;
     }
 
-    /* Center everything */
+    /* Background video */
+    #bg-video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      opacity: 0.35; /* ghosty effect under text */
+    }
+
+    /* Center content */
     .container {
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100%;
       text-align: center;
-      animation: pageShake 0.7s ease-in-out 0.5s 3; /* shakes a few times */
+      animation: pageShake 0.7s ease-in-out 0.5s 3;
     }
 
     h1 {
-      font-size: 200pt; /* giant red text */
+      font-size: 200pt;
+      color: red;
+      text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
       margin: 0;
-      text-shadow: 0 0 25px #ff0000;
     }
 
-    /* Page shake animation */
+    /* Shake animation */
     @keyframes pageShake {
       0%   { transform: translate(0, 0) rotate(0deg); }
       15%  { transform: translate(-10px, -5px) rotate(-1deg); }
@@ -42,8 +56,15 @@
   </style>
 </head>
 <body>
+
+  <!-- Actual MP4 background video (public Rickroll mirror) -->
+  <video id="bg-video" autoplay loop muted playsinline>
+    <source src="https://files.catbox.moe/5zu9mp.mp4" type="video/mp4">
+  </video>
+
   <div class="container">
     <h1>HELLO RYAN</h1>
   </div>
+
 </body>
 </html>
