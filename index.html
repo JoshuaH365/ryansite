@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ryan Nyberg</title>
+  <title>Hello Ryan</title>
   <style>
-    body { 
-      font-family: sans-serif;
-      background: #111; 
-      color: #0f0; 
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+      color: #ff0000;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* Center everything */
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
       text-align: center;
-      margin-top: 100px;
-      font-size: 40px;
+      animation: pageShake 0.7s ease-in-out 0.5s 3; /* shakes a few times */
+    }
+
+    h1 {
+      font-size: 200pt; /* giant red text */
+      margin: 0;
+      text-shadow: 0 0 25px #ff0000;
+    }
+
+    /* Page shake animation */
+    @keyframes pageShake {
+      0%   { transform: translate(0, 0) rotate(0deg); }
+      15%  { transform: translate(-10px, -5px) rotate(-1deg); }
+      30%  { transform: translate(10px, 5px) rotate(1deg); }
+      45%  { transform: translate(-8px, 4px) rotate(-0.8deg); }
+      60%  { transform: translate(8px, -4px) rotate(0.8deg); }
+      75%  { transform: translate(-5px, 2px) rotate(-0.5deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
     }
   </style>
 </head>
 <body>
-  <p>Hello Ryan, I have purchased your name</p>
+  <div class="container">
+    <h1>HELLO RYAN</h1>
+  </div>
 </body>
 </html>
